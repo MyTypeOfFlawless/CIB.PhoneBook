@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace CIB.Phonebook.SPA
+namespace CIB.PhoneBook.SPA
 {
     public class BundleConfig
     {

@@ -1,4 +1,4 @@
-/**
+/*
  * @license AngularJS v1.7.8
  * (c) 2010-2018 Google, Inc. http://angularjs.org
  * License: MIT
@@ -7,7 +7,7 @@
 
 /* global shallowCopy: true */
 
-/**
+/*
  * Creates a shallow copy of an object, an array or a primitive.
  *
  * Assumes that there are no proto properties for objects.
@@ -111,7 +111,7 @@ var $routeMinErr = angular.$$minErr('ngRoute');
 var isEagerInstantiationEnabled;
 
 
-/**
+/*
  * @ngdoc provider
  * @name $routeProvider
  * @this
@@ -670,7 +670,7 @@ function $RouteProvider() {
 
     /////////////////////////////////////////////////////
 
-    /**
+    /*
      * @param on {string} current url
      * @param route {Object} route regexp to match the url against
      * @return {?Object}
@@ -909,7 +909,7 @@ function $RouteProvider() {
           );
     }
 
-    /**
+    /*
      * @returns {string} interpolation of the redirect path with the parameters
      */
     function interpolate(string, params) {
@@ -941,7 +941,7 @@ function instantiateRoute($injector) {
 ngRouteModule.provider('$routeParams', $RouteParamsProvider);
 
 
-/**
+/*
  * @ngdoc service
  * @name $routeParams
  * @requires $route

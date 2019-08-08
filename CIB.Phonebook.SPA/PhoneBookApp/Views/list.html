@@ -20,15 +20,16 @@
                 <td>{{contact.DateCreated}}</td>
                 <td>{{contact.DateModified}}</td>
                 <td>
-                    <a href="../Views/details/{{contact.Id}}" class="btn btn-default btn-sm">Details</a>
+                    <a href="details/{{contact.Id}}" class="btn btn-default btn-sm">Details</a>  
                     <button class="btn btn-danger btn-sm" ng-click="delete(contact)">Delete</button>
-
                 </td>
             </tr>
         </tbody>
     </table>
     <br/>
-    <button class="btn btn-danger btn-sm" ng-click="create()">Add Contact</button>
-    <div ng-include="'edit.html'"></div>
+    
+    <button class="btn btn-danger btn-sm" ng-click="create()">Add new contact</button>  
+    <div ng-include="'edit.html'"></div> 
+
     
 </div>

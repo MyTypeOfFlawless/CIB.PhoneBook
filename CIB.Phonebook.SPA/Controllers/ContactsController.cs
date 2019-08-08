@@ -14,19 +14,19 @@ namespace CIB.PhoneBook.SPA.Controllers
 {
     public class ContactsController : ApiController
     {
-        private ContactDb db = new ContactDb();
+        private ContactDb ContactDb { get; } = new ContactDb();
 
         // GET: api/Contacts
         public IQueryable<Contact> GetContacts()
         {
-            return db.Contacts;
+            return ContactDb.Contacts;
         }
 
         // GET: api/Contacts/5
         [ResponseType(typeof(Contact))]
         public IHttpActionResult GetContact(int id)
         {
-            Contact contact = db.Contacts.Find(id);
+            Contact contact = ContactDb.Contacts.Find(id);
             if (contact == null)
             {
                 return NotFound();
@@ -49,11 +49,11 @@ namespace CIB.PhoneBook.SPA.Controllers
                 return BadRequest();
             }
 
-            db.Entry(contact).State = EntityState.Modified;
+            ContactDb.Entry(contact).State = EntityState.Modified;
 
             try
             {
-                db.SaveChanges();
+                ContactDb.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -79,8 +79,8 @@ namespace CIB.PhoneBook.SPA.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Contacts.Add(contact);
-            db.SaveChanges();
+            ContactDb.Contacts.Add(contact);
+            ContactDb.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = contact.Id }, contact);
         }
@@ -89,14 +89,14 @@ namespace CIB.PhoneBook.SPA.Controllers
         [ResponseType(typeof(Contact))]
         public IHttpActionResult DeleteContact(int id)
         {
-            Contact contact = db.Contacts.Find(id);
+            Contact contact = ContactDb.Contacts.Find(id);
             if (contact == null)
             {
                 return NotFound();
             }
 
-            db.Contacts.Remove(contact);
-            db.SaveChanges();
+            ContactDb.Contacts.Remove(contact);
+            ContactDb.SaveChanges();
 
             return Ok(contact);
         }
@@ -105,14 +105,14 @@ namespace CIB.PhoneBook.SPA.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                ContactDb.Dispose();
             }
             base.Dispose(disposing);
         }
 
         private bool ContactExists(int id)
         {
-            return db.Contacts.Count(e => e.Id == id) > 0;
+            return ContactDb.Contacts.Count(e => e.Id == id) > 0;
         }
     }
 }

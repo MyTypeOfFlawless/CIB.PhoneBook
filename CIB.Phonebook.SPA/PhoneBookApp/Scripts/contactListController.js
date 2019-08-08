@@ -1,10 +1,10 @@
 ﻿(function (app) {
     var contactListController = function ($scope, contactService) {
-
+       
         contactService
             .getAll()
             .then(function (data) {
-                $scope.contacts[] = data;
+                $scope.contacts = data;
             });
 
         $scope.create = function () {
@@ -20,21 +20,25 @@
             };
         };
 
+
         var removeContactById = function (id) {
             for (var i = 0; i < $scope.contacts.length; i++) {
-                if ($scope.contact[i].Id === id) {
-                    $scope.contact.splice(i, 1);
+                if ($scope.contacts[i].Id == id) {
+                    $scope.contacts.splice(i, 1);
                     break;
                 }
             }
         };
 
-        $scope.delete = function (contact) {
-            contactService.delete(contact.Id)
-                .then(function () {
-                    removeContactById(contact.Id);
-                });
-        };
+        $scope.deleteById = function (contact) {
+            contactService.deleteById(contact.Id)
+            .then(function () {
+                removeContactById(contact.Id);
+            });
+        }; 
+
+        
+ 
         
     };
     app.controller("contactListController", contactListController);

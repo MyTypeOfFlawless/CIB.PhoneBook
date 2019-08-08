@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace CIB.Phonebook.SPA
+namespace CIB.PhoneBook.SPA
 {
     public class RouteConfig
     {
