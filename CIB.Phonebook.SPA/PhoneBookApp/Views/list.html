@@ -8,10 +8,11 @@
                 <th>Work Telephone</th>
                 <th>Date Created</th>
                 <th>Date Modified</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="contact in Contacts">
+            <tr ng-repeat="contact in contacts">
                 <td>{{contact.FirstName}}</td>
                 <td>{{contact.LastName}}</td>
                 <td>{{contact.Mobile}}</td>
@@ -19,7 +20,7 @@
                 <td>{{contact.DateCreated}}</td>
                 <td>{{contact.DateModified}}</td>
                 <td>
-                    <a href="PhoneBookApp/Views/details/{{contact.Id}}" class="btn btn-default btn-sm">Details</a>
+                    <a href="../Views/details/{{contact.Id}}" class="btn btn-default btn-sm">Details</a>
                     <button class="btn btn-danger btn-sm" ng-click="delete(contact)">Delete</button>
 
                 </td>

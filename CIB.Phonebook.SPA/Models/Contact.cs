@@ -14,8 +14,8 @@ namespace CIB.PhoneBook.SPA.Models
         public string LastName { get; set; }
         [Required]
         public string Mobile { get; set; }
-        public string WorkTelephone { get; set; }
         [Required]
+        public string WorkTelephone { get; set; }
         public System.DateTime DateCreated { get; set; } = DateTime.Now;
         public DateTime? DateModified { get; set; } = DateTime.Now;
     }

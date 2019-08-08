@@ -9,7 +9,7 @@
             $scope.edit.contact = null;
         };
 
-        $scope.Contacts = [];
+        $scope.contacts = [];
 
         var createContact = function () {
             contactService.create($scope.edit.contact)

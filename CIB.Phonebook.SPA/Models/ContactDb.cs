@@ -9,6 +9,11 @@ namespace CIB.PhoneBook.SPA.Models
         {
             
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<ContactDb>(null);
+            base.OnModelCreating(modelBuilder);
+        }
 
         public DbSet<Contact> Contacts { get; set; }
     }

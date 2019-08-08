@@ -1,0 +1,2 @@
+C:\Source\CIB.Phonebook\CIB.WaboxappApi.MessageSender\obj\x64\Debug\CIB.WaboxappApi.MessageSender.csprojAssemblyReference.cache
+C:\Source\CIB.Phonebook\CIB.WaboxappApi.MessageSender\obj\x64\Debug\CIB.WaboxappApi.MessageSender.csproj.CoreCompileInputs.cache

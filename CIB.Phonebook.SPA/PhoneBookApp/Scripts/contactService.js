@@ -17,7 +17,7 @@
             return $http.post(contactApiUrl, contact);
         };
 
-        var destroy = function (id) {
+        var deleteById = function (id) {
             return $http.delete(contactApiUrl + id);
         };
 
@@ -26,7 +26,7 @@
             getById: getById,
             update: update,
             create: create,
-            delete: destroy
+            delete: deleteById
         };
     };
     app.factory("contactService", contactService);
