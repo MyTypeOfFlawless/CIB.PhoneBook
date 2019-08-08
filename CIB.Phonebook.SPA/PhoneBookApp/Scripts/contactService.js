@@ -1,7 +1,7 @@
 ﻿(function (app) {
     var contactService = function ($http, contactApiUrl) {
         var getAll = function () {
-            return $http.get(contactApiUrl);
+            return $http.getAll(contactApiUrl);
         };
 
         var getById = function (id) {

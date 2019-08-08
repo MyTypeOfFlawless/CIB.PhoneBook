@@ -4,7 +4,7 @@
         contactService
             .getAll()
             .then(function (data) {
-                $scope.contacts = data;
+                $scope.contacts[] = data;
             });
 
         $scope.create = function () {
