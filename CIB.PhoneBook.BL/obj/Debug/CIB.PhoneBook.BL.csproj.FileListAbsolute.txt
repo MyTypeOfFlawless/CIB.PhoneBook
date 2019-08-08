@@ -1,0 +1,14 @@
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\obj\Debug\CIB.PhoneBook.BL.csprojAssemblyReference.cache
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\obj\Debug\CIB.PhoneBook.BL.csproj.CoreCompileInputs.cache
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\bin\Debug\CIB.PhoneBook.BL.dll
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\bin\Debug\CIB.PhoneBook.BL.pdb
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\bin\Debug\CIB.PhoneBook.DAL.dll
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\bin\Debug\CIB.PhoneBook.Shared.dll
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\bin\Debug\EntityFramework.dll
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\bin\Debug\CIB.PhoneBook.DAL.pdb
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\bin\Debug\CIB.PhoneBook.DAL.dll.config
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\bin\Debug\CIB.PhoneBook.Shared.pdb
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\bin\Debug\EntityFramework.xml
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\obj\Debug\CIB.PhoneBook.BL.csproj.CopyComplete
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\obj\Debug\CIB.PhoneBook.BL.dll
+C:\Users\Jaco\Documents\Visual Studio 2017\CIB.PhoneBook\CIB.PhoneBook.BL\obj\Debug\CIB.PhoneBook.BL.pdb

@@ -1,0 +1,265 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CIB.PhoneBook.UI.Web.Site" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <!-- BEGIN META -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CIB Phonebook" />
+    <meta name="keywords" content="Cib, PhoneBook" />
+    <meta name="author" content="J. Kleynhans" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- END META -->
+
+    <!-- BEGIN STYLESHEETS -->
+    <link href="css/OpenSans.css?family=Open+Sans:400italic,300,400,600,700,800" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="Content/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="Boostbox/assets/css/theme-3/bootstrap.css?1400695306" />
+    <link type="text/css" rel="stylesheet" href="Boostbox/assets/css/theme-3/boostbox.css?1401297311" />
+    <link type="text/css" rel="stylesheet" href="Boostbox/assets/css/theme-3/boostbox_responsive.css?1400695309" />
+    <link type="text/css" rel="stylesheet" href="fonts/fontawesome-pro-5.7.0/css/all.css" />
+    <link type="text/css" rel="stylesheet" href="fonts/fontawesome-pro-5.7.0/css/fontawesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="Boostbox/assets/css/motovate-default.css?1400333030" />
+    <link type="text/css" rel="stylesheet" href="Boostbox/assets/css/theme-default/libs/toastr/toastr.css?1401216363" />
+    <!-- END STYLESHEETS -->
+
+    <style>
+        .navbarBrandFixed {
+            left: 0;
+            width: 270px;
+        }
+
+        .breadcrumb > li + li:before {
+            font-family: "Font Awesome 5 Pro";
+        }
+
+        .fixedBread {
+            top:50px;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="../../assets/js/libs/utils/html5shiv.js?1400333019"></script>
+        <script type="text/javascript" src="../../assets/js/libs/utils/respond.min.js?1400333017"></script>
+    <![endif]-->
+
+    <!-- BEGIN SITE ICONS -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/1616favicon.ico" sizes="16x16">
+    <link rel="shortcut icon" type="image/x-icon" href="images/3232favicon.ico" sizes="32x32">
+    <link rel="shortcut icon" type="image/x-icon" href="images/4848favicon.ico" sizes="48x48">
+    <link rel="shortcut icon" type="image/x-icon" href="images/6464favicon.ico" sizes="64x64">
+    <link rel="shortcut icon" type="image/x-icon" href="images/128128favicon.ico" sizes="128x128">
+    <link rel="manifest" href="images/manifest.json" />
+    <!-- END SITE ICONS -->
+    
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+
+    <title>CIB PhoneBook</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="True"></telerik:RadScriptManager>
+        <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server" EnableAJAX="True">
+            <AjaxSettings>
+                
+            </AjaxSettings>
+        </telerik:RadAjaxManager>
+        <!-- BEGIN HEADER-->
+        <header id="header" style="z-index: 3000">
+
+            <!-- BEGIN NAVBAR -->
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <a class="btn btn-transparent btn-equal btn-menu" href="javascript:void(0);"><i class="fa fa-bars fa-lg"></i></a>
+                    <div class="navbar-brand">
+                        <a class="main-brand" href="Dashboard.aspx">
+                            <h3 class="text-light"><img src="images/websiteLogoSmall.png" style="height: 20px; margin-top: -2px; padding-right: 5px; opacity: 0.5"><span>CIB<strong>Phonebook</strong> </span></h3>
+                        </a>
+                    </div>
+                    <!--end .navbar-brand -->
+                    <a class="btn btn-transparent btn-equal navbar-toggle" data-toggle="collapse" data-target="#header-navbar-collapse"><i class="fa fa-wrench fa-lg"></i></a>
+                </div>
+                <div class="collapse navbar-collapse" id="header-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="Dashboard.aspx"><i class="fa fa-home fa-lg"></i></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lg fa-envelope"></i><sup class="badge badge-support2" id="supMessageCount">0</sup></a>
+                            <ul class="dropdown-menu animation-zoom" id="ulTodaysMessages">
+                                <li class="dropdown-header">Today's messages</li>
+                                <li class="dropdown-header">Options</li>
+                                <li><a href="#">View all messages <span class="pull-right"><i class="fa fa-arrow-right"></i></span></a></li>
+                                <li><a href="javascript:resetToDoList();">Mark as read <span class="pull-right"><i class="fa fa-arrow-right"></i></span></a></li>
+                            </ul>
+                        </li>
+                        <!--end .dropdown -->
+                        <li><span class="navbar-devider"></span></li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle text-bold" data-toggle="dropdown">
+                                <asp:Label runat="server" ID="lblUserDealer"></asp:Label>
+                            </a>
+                        </li>
+                        <li><span class="navbar-devider"></span></li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="navbar-profile dropdown-toggle text-bold" data-toggle="dropdown">
+                                <asp:Label runat="server" ID="lblLoggedInUser"></asp:Label>
+                                <i class="fa fa-fw fa-angle-down"></i>
+                                <img class="img-circle" src="Boostbox/assets/img/avatar1.jpg?1401297311" alt="" /></a>
+                            <ul class="dropdown-menu animation-slide">
+                                <li class="dropdown-header">Config</li>
+                                <li><a href="#">My profile</a></li>
+                                <li><a href="#">My settings</a></li>
+                                <li><a href="#">My templates</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="fa fa-fw fa-power-off text-danger"></i>Logout</a></li>
+                            </ul>
+                            <!--end .dropdown-menu -->
+                        </li>
+                        <!--end .dropdown -->
+                    </ul>
+                    <!--end .nav -->
+                </div>
+                <!--end #header-navbar-collapse -->
+            </nav>
+            <!-- END NAVBAR -->
+
+        </header>
+        <!-- END HEADER-->
+        <!-- BEGIN BASE-->
+        <div id="base">
+            <!-- BEGIN SIDEBAR-->
+            <div id="sidebar">
+                <div class="sidebar-back"></div>
+                <div class="sidebar-content">
+                    <div class="nav-brand" id="navBrand">
+                        <a class="main-brand" href="Dashboard.aspx">
+                            <h3 class="text-light text-white" style="color: #333333; font-size: 18px"><img src="images/websiteLogoSmall.png" class="audiLogoNormal"><span style="padding-left:4px">My<strong>PhoneBook</strong></span></h3>
+                        </a>
+                    </div>
+
+                    <!-- BEGIN MENU SEARCH -->
+                    <div class="sidebar-search">
+                    </div>
+                    <!-- END MENU SEARCH -->
+
+                    <!-- BEGIN MAIN MENU -->
+                    <ul class="main-menu" id="navMainMenu">
+                        <!-- Menu contacts -->
+                        <li id="liContacts">
+                            <a href="javascript:void(0);">
+                                <i class="fa fa-male fa-fw"></i><span class="title">Contacts</span> <span class="expand-sign">+</span>
+                            </a>
+                            <!--start submenu -->
+                            <ul>
+                                <li id="liAddContact" runat="server"><a href="#" id="aAddAContact">Add a Contact</a></li>
+                                <li><a href="Default.aspx" id="aSelectACustomer">My Contacts</a></li>
+                            </ul>
+                            <!--end /submenu -->
+                        </li>
+                        <!--end /menu-item -->
+                    <!-- END MAIN MENU -->
+                    </ul>
+                </div>
+            </div>
+            <!--end #sidebar-->
+            <!-- END SIDEBAR -->
+
+            <!-- BEGIN CONTENT-->
+            <div id="content">
+                <section>
+                    <ol class="breadcrumb" id="breadcrumb">
+                        <asp:ContentPlaceHolder runat="server" ID="breadCrumbPlaceHolder">
+                        </asp:ContentPlaceHolder>
+                    </ol>
+                    <div class="section-header" id="sectionHeader">
+
+                        <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder2">
+                        </asp:ContentPlaceHolder>
+
+                    </div>
+                    <div class="section-body">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <!--end .section-body -->
+                </section>
+            </div>
+            <!--end #content-->
+            <!-- END CONTENT -->
+
+        </div>
+        <!--end #base-->
+        <!-- END BASE -->
+
+        <!-- BEGIN JAVASCRIPT -->
+        <script src="scripts/bootstrap.min.js"></script>
+        <script src="Boostbox/assets/js/libs/spin.js/spin.min.js"></script>
+        <script src="Boostbox/assets/js/libs/slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="Boostbox/assets/js/core/App.js"></script>
+        <script src="Boostbox/assets/js/core/demo/Demo.js"></script>
+        <script src="Boostbox/assets/js/libs/wizard/jquery.bootstrap.wizard.min.js"></script>
+        <script src="Boostbox/assets/js/core/demo/DemoFormWizard.js"></script>
+        <script src="Boostbox/assets/js/libs/toastr/toastr.min.js"></script>
+        <script src="scripts/site.js?1004"></script>
+        <!-- END JAVASCRIPT -->
+        <telerik:RadCodeBlock ID="RadCodeBlockMaster" runat="server">
+            <script type="text/javascript">
+                
+
+                $(document).ready(function () {
+
+                    //-->[scroll to top]
+                    $(function () {
+                        $(document).on('scroll', function () {
+                            if ($(window).scrollTop() > 100) {
+                                $('.scroll-top-wrapper').addClass('show');
+                                $('.summaryButton').addClass('show');
+                            } else {
+                                $('.scroll-top-wrapper').removeClass('show');
+                                $('.summaryButton').removeClass('show');
+                            }
+                        });
+
+                        $('.scroll-top-wrapper').on('click', scrollToTop);
+                    });
+
+                    function scrollToTop() {
+                        verticalOffset = typeof (verticalOffset) != 'undefined' ? verticalOffset : 0;
+                        element = $('body');
+                        offset = element.offset();
+                        offsetTop = offset.top;
+                        $('html, body').animate({ scrollTop: offsetTop }, 500, 'linear');
+                    }
+
+
+                });
+
+                
+                
+                
+            </script>
+        </telerik:RadCodeBlock>
+
+        <!-- The scroll to top feature -->
+        <div class="scroll-top-wrapper ">
+            <span class="scroll-top-inner">
+                <i class="fa fa-2x fa-arrow-circle-up"></i>
+            </span>
+        </div>
+
+
+        
+
+    </form>
+</body>
+</html>
