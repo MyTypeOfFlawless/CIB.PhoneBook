@@ -1,7 +1,8 @@
 ﻿(function (app) {
     var detailsController = function ($scope, $routeParams, contactService) {
+
         var id = $routeParams.id;
-        contactService.getById(id).then(function (data) {
+        contactService.getById(id).success(function (data) {
             $scope.contact = data;
         });
 

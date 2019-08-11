@@ -1,4 +1,5 @@
 ﻿<div ng-controller="contactListController">
+    <p *ngIf="!contacts">Loading data ...</p>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -20,16 +21,16 @@
                 <td>{{contact.DateCreated}}</td>
                 <td>{{contact.DateModified}}</td>
                 <td>
-                    <a href="details/{{contact.Id}}" class="btn btn-default btn-sm">Details</a>  
+                    <a href="details/{{contact.Id}}" class="btn btn-default btn-sm">Details</a>
                     <button class="btn btn-danger btn-sm" ng-click="delete(contact)">Delete</button>
                 </td>
             </tr>
         </tbody>
     </table>
-    <br/>
-    
-    <button class="btn btn-danger btn-sm" ng-click="create()">Add new contact</button>  
-    <div ng-include="'edit.html'"></div> 
+    <br />
 
-    
+    <button class="btn btn-danger btn-sm" ng-click="create()">Add new contact</button>
+    <div ng-include="'edit.html'"></div>
+
+
 </div>

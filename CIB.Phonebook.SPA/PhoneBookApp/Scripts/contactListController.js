@@ -3,7 +3,7 @@
        
         contactService
             .getAll()
-            .then(function (data) {
+            .success(function (data) {
                 $scope.contacts = data;
             });
 
@@ -23,7 +23,7 @@
 
         var removeContactById = function (id) {
             for (var i = 0; i < $scope.contacts.length; i++) {
-                if ($scope.contacts[i].Id == id) {
+                if ($scope.contacts[i].Id === id) {
                     $scope.contacts.splice(i, 1);
                     break;
                 }
@@ -32,13 +32,10 @@
 
         $scope.deleteById = function (contact) {
             contactService.deleteById(contact.Id)
-            .then(function () {
+                .success(function () {
                 removeContactById(contact.Id);
             });
         }; 
-
-        
- 
         
     };
     app.controller("contactListController", contactListController);

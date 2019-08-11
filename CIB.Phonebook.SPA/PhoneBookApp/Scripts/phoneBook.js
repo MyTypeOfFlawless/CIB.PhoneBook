@@ -1,5 +1,7 @@
 ﻿(function () {
+
     var app = angular.module("phoneBook", ["ngRoute"]);
+
     var config = function ($routeProvider) {
         $routeProvider
             .when("/list",

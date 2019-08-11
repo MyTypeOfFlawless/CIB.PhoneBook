@@ -87,3 +87,6 @@ C:\Source\CIB.Phonebook\CIB.Phonebook.SPA\obj\x64\Debug\CIB.PhoneBook.SPA.csproj
 C:\Source\CIB.Phonebook\CIB.Phonebook.SPA\obj\x64\Debug\CIB.PhoneBook.SPA.csproj.CopyComplete
 C:\Source\CIB.Phonebook\CIB.Phonebook.SPA\obj\x64\Debug\CIB.PhoneBook.SPA.dll
 C:\Source\CIB.Phonebook\CIB.Phonebook.SPA\obj\x64\Debug\CIB.PhoneBook.SPA.pdb
+C:\Source\CIB.Phonebook\CIB.Phonebook.SPA\bin\System.Web.Cors.dll
+C:\Source\CIB.Phonebook\CIB.Phonebook.SPA\bin\System.Web.Http.Cors.dll
+C:\Source\CIB.Phonebook\CIB.Phonebook.SPA\bin\System.Web.Http.Cors.xml
