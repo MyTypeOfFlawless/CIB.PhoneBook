@@ -30,8 +30,8 @@
             }
         };
 
-        $scope.deleteById = function (contact) {
-            contactService.deleteById(contact.Id)
+        $scope.delete = function (contact) {
+            contactService.delete(contact.Id)
                 .success(function () {
                 removeContactById(contact.Id);
             });

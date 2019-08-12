@@ -9,7 +9,7 @@
             .when("/details/:id",
             { templateUrl: "details.html", controller: "detailsController" })
             .otherwise(
-            { redirectTo: "/list", controller: "contactListController" });
+            { redirectTo: "list", controller: "contactListController" });
     };
 
     app.config(config);
