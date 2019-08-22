@@ -60,7 +60,7 @@ export class ContactComponent implements OnInit {
       this.contactService.create(contact).subscribe(
         () => {
           this.dataSaved = true;
-          this.message = 'Record saved successfully';
+          this.message = 'Contact saved successfully';
           this.loadAllContacts();
           this.contactIdUpdate = null;
           this.contactForm.reset();
@@ -72,7 +72,7 @@ export class ContactComponent implements OnInit {
       contact.DateModified = new Date();
       this.contactService.update(contact).subscribe(() => {
         this.dataSaved = true;
-        this.message = 'Record updated successfully';
+        this.message = 'Contact updated successfully';
         this.loadAllContacts();
         this.contactIdUpdate = null;
         this.contactForm.reset();
@@ -84,7 +84,7 @@ export class ContactComponent implements OnInit {
     if (confirm("Are you sure you want to delete this?")) {
       this.contactService.deleteById(id).subscribe(() => {
         this.dataSaved = true;
-        this.message = 'Record deleted successfully';
+        this.message = 'Contact deleted successfully';
         this.loadAllContacts();
         this.contactIdUpdate = null;
         this.contactForm.reset();
